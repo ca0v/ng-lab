@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class NgMetaLibraryComponent {
 
+  code = `
+  import { Component } from '@angular/core';
+  import { BrowserModule } from '@angular/platform-browser'
+  `
+
 }

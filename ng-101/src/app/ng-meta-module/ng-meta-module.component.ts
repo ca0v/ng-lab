@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./ng-meta-module.component.css']
 })
 export class NgMetaModuleComponent {
-
+  code = `import { BrowserModule } from '@angular/platform-browser';`
 }
