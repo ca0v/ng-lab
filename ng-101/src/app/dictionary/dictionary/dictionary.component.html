@@ -7,4 +7,4 @@
   <app-ng-meta-directive><p>This is a component</p></app-ng-meta-directive>
   <app-ng-meta-provider><p>This is a component</p></app-ng-meta-provider>
 </div>
-<p>Total Running Time: {{ getRunningTime() }}</p>
+<p>Total Running Time: {{ runningTime / 1000 | number : "1.0-0" }}</p>
