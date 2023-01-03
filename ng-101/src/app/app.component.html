@@ -8,4 +8,10 @@
     </p></app-dictionary
   >
 </div>
+<div class="nested">
+  <app-meta-data-bound photoId="1" (like)="onLike($event)"></app-meta-data-bound>
+</div>
+<p>
+  Totals Likes: <b>{{ likes }}</b>
+</p>
 <router-outlet></router-outlet>
