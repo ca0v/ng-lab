@@ -9,9 +9,14 @@
   >
 </div>
 <div class="nested">
-  <app-meta-data-bound photoId="1" (like)="onLike($event)"></app-meta-data-bound>
+  <app-meta-data-bound
+    photoId="1"
+    (like)="onLike($event)"
+  ></app-meta-data-bound>
+  <p>
+    Totals Likes: <b>{{ likes }}</b>
+  </p>
+
+  <app-meta-pipe></app-meta-pipe>
 </div>
-<p>
-  Totals Likes: <b>{{ likes }}</b>
-</p>
 <router-outlet></router-outlet>

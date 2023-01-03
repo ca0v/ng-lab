@@ -7,12 +7,14 @@ import {DictionaryModule} from './dictionary/dictionary.module'
 import { AppComponent } from './app.component';
 import { CollapseDirective } from './collapse.directive';
 import { MetaDataBoundComponent } from './meta-data-bound/meta-data-bound.component';
+import { MetaPipeComponent } from './meta-pipe/meta-pipe.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CollapseDirective,
     MetaDataBoundComponent,
+    MetaPipeComponent,
   ],
   imports: [
     BrowserModule,
