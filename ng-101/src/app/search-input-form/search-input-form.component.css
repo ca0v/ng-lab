@@ -1,0 +1,20 @@
+.notify {
+  font-size: 12px;
+  margin-top: 5px;
+  width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  transition-property: width;
+  transition-duration: 500ms;
+  transition-delay: 1000ms;
+  transition-timing-function: linear;
+  border-bottom: 1px solid white;
+}
+
+.notify.show {
+  width: 25rem;
+}
+
+.notify > code {
+  color: red;
+}

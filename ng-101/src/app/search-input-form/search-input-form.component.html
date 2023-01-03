@@ -1,7 +1,12 @@
+<label for="search">What are you looking for?</label>
 <input
+  id="search"
   type="text"
   class="form-control"
   placeholder="Search"
   [(ngModel)]="searchTerm"
   (keyup.enter)="search()"
 />
+<p [ngClass]="searchTerm.length ? 'show' : ''" class="notify">
+  Searching for <code>{{ searchTerm }}</code>
+</p>
