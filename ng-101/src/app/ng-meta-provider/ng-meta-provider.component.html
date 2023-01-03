@@ -2,7 +2,7 @@
 <ng-content></ng-content>
 <p>A provider of dependencies from one part of the system to another</p>
 <p>Used for dependency injection</p>
-<button *ngIf="collapse" (click)="collapse = !collapse">More...</button>
+<a href="#" class="outline" role="button" *ngIf="collapse" (click)="collapse = !collapse">More...</a>
 <div *ngIf="!collapse">
   <p>Injector is a sort of factory, creating providers that implement a spec</p>
 </div>

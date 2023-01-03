@@ -1,9 +1,13 @@
 <h2>About Data Bound</h2>
 
 <div class="indent">
-  <p>You are trying to load photo {{ photoId }}</p>
-  <button (click)="onLike()">Like</button>
-  <button (click)="onLike(3)">Really, really, Like</button>
+  <p *ngIf="photoId">Viewing photo #{{ photoId }}</p>
+  <nav>
+    <ul>
+      <li><button class="outline" (click)="onLike()">Like</button></li>
+      <li><button class="outline secondary" (click)="onLike(3)">Really, really, Like</button></li>
+    </ul>
+  </nav>
 </div>
 
 <p>A module listens for the "like" event emitted by the component.</p>
