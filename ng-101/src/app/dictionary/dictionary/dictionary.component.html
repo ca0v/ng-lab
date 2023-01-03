@@ -1,3 +1,15 @@
-<app-ng-meta-component></app-ng-meta-component>
-<app-ng-meta-module></app-ng-meta-module>
-<app-ng-meta-library></app-ng-meta-library>
+<h2>Dictionary Component</h2>
+<p>This is an example of a root component with a view hierarchy</p>
+<div class="nested">
+  <app-ng-meta-component
+    ><p>This is a component of the view hierarchy</p></app-ng-meta-component
+  >
+</div>
+<div class="nested">
+  <p>This is a component of the view hierarchy</p>
+  <app-ng-meta-module></app-ng-meta-module>
+</div>
+<div class="nested">
+  <p>This is a component of the view hierarchy</p>
+  <app-ng-meta-library></app-ng-meta-library>
+</div>

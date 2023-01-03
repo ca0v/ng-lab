@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class NgMetaComponentComponent {
 code = `
-<app-ng-meta-component>slot</app-ng-meta-component>
+<app-ng-meta-component><ng-content></ng-content></app-ng-meta-component>
 `;
 
 }
