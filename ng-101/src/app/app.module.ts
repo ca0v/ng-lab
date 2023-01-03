@@ -5,10 +5,12 @@ import { AppRoutingModule } from './app-routing.module';
 import {DictionaryModule} from './dictionary/dictionary.module'
 
 import { AppComponent } from './app.component';
+import { CollapseDirective } from './collapse.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
+    CollapseDirective,
   ],
   imports: [
     BrowserModule,
