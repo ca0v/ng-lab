@@ -9,6 +9,8 @@ import { SystemTimeService } from 'src/app/systemtime.service';
 export class DictionaryComponent {
   startTime: number;
   runningTime: number = 0;
+  likes = 0;
+   
   tick = new EventEmitter<{ runningTime: number }>();
   
   constructor(private service: SystemTimeService) {
@@ -21,5 +23,10 @@ export class DictionaryComponent {
       this.runningTime = this.service.getTime() - this.startTime;
       this.tick.emit({ runningTime: this.runningTime });
     }, 1000);
+  }
+
+  onLike(event: { likes: number }) {
+    this.likes += event.likes;
+    console.log('app.onLike', this.likes);
   }
 }

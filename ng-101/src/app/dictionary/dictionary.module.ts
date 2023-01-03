@@ -9,6 +9,7 @@ import { NgMetaLibraryComponent } from '../ng-meta-library/ng-meta-library.compo
 import { NgMetaDirectiveComponent } from '../ng-meta-directive/ng-meta-directive.component';
 import { DictionaryComponent } from './dictionary/dictionary.component';
 import { NgMetaProviderComponent } from '../ng-meta-provider/ng-meta-provider.component';
+import { MetaDataBoundComponent } from '../meta-data-bound/meta-data-bound.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { NgMetaProviderComponent } from '../ng-meta-provider/ng-meta-provider.co
     NgMetaLibraryComponent,
     NgMetaDirectiveComponent,
     NgMetaProviderComponent,
+    MetaDataBoundComponent,
     DictionaryComponent,
   ],
   imports: [CommonModule],

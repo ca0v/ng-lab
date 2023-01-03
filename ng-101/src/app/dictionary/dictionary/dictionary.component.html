@@ -6,5 +6,12 @@
   <app-ng-meta-library><p>This is a component</p></app-ng-meta-library>
   <app-ng-meta-directive><p>This is a component</p></app-ng-meta-directive>
   <app-ng-meta-provider><p>This is a component</p></app-ng-meta-provider>
+  <app-meta-data-bound
+    photoId="1"
+    (like)="onLike($event)"
+  ></app-meta-data-bound>
+  <p>
+    Totals Likes: <b>{{ likes }}</b>
+  </p>
 </div>
 <p>Total Running Time: {{ runningTime / 1000 | number : "1.0-0" }}</p>

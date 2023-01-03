@@ -1,24 +1,14 @@
 <h1>{{ title }}</h1>
 <p>This is an example of an application</p>
-<button *ngIf="collapse" (click)="toggleCollapse()">More...</button>
-<div class="nested" *appCollapse="collapse">
-  <app-dictionary
-    ><p>
-      This is an example of a root component with a view hierarchy
-    </p></app-dictionary
-  >
-</div>
-<div class="nested">
-  <app-meta-data-bound
-    photoId="1"
-    (like)="onLike($event)"
-  ></app-meta-data-bound>
-  <p>
-    Totals Likes: <b>{{ likes }}</b>
-  </p>
 
-  <app-meta-pipe></app-meta-pipe>
+<nav class="menu">
+  <ul>
+    <li><button routerLink="./dictionary">Glossary</button></li>
+    <li><button routerLink="./meta/databound">Data Bound</button></li>
+    <li><button routerLink="./meta/pipe">Pipe</button></li>
+    <li><button routerLink="./meta/route">Route</button></li>
+    <li><button routerLink="./meta/searchform">Search Form</button></li>
+  </ul>
+</nav>
 
-  <app-search-input-form></app-search-input-form>
-</div>
 <router-outlet></router-outlet>

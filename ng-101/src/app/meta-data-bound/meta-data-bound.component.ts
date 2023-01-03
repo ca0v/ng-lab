@@ -11,6 +11,9 @@ export class MetaDataBoundComponent {
   @Attribute('photoId') photoId: string | null = null;
   like = new EventEmitter<{ likes: number }>();
 
+  code = `
+  <app-meta-data-bound photoId="1" (like)="onLike($event)"></app-meta-data-bound>
+  `;
   constructor() {}
 
   onLike(likes = 1) {
