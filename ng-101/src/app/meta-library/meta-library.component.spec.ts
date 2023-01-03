@@ -1,18 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NgMetaLibraryComponent } from './ng-meta-library.component';
+import { MetaLibraryComponent } from './meta-library.component';
 
-describe('NgMetaLibraryComponent', () => {
-  let component: NgMetaLibraryComponent;
-  let fixture: ComponentFixture<NgMetaLibraryComponent>;
+describe('MetaLibraryComponent', () => {
+  let component: MetaLibraryComponent;
+  let fixture: ComponentFixture<MetaLibraryComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ NgMetaLibraryComponent ]
-    })
-    .compileComponents();
+      declarations: [MetaLibraryComponent],
+    }).compileComponents();
 
-    fixture = TestBed.createComponent(NgMetaLibraryComponent);
+    fixture = TestBed.createComponent(MetaLibraryComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

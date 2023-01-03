@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-ng-meta-component',
-  templateUrl: './ng-meta-component.component.html',
-  styleUrls: ['./ng-meta-component.component.css'],
+  selector: 'app-meta-component',
+  templateUrl: './meta-component.component.html',
+  styleUrls: ['./meta-component.component.css'],
 })
-export class NgMetaComponentComponent {
+export class MetaComponentComponent {
   code = `
-<app-ng-meta-component><ng-content></ng-content></app-ng-meta-component>
+<app-meta-component><ng-content></ng-content></app-meta-component>
 `;
   collapse = true;
 }

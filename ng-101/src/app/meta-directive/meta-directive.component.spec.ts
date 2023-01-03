@@ -1,18 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NgMetaDirectiveComponent } from './ng-meta-directive.component';
+import { MetaDirectiveComponent } from './meta-directive.component';
 
-describe('NgMetaDirectiveComponent', () => {
-  let component: NgMetaDirectiveComponent;
-  let fixture: ComponentFixture<NgMetaDirectiveComponent>;
+describe('MetaDirectiveComponent', () => {
+  let component: MetaDirectiveComponent;
+  let fixture: ComponentFixture<MetaDirectiveComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ NgMetaDirectiveComponent ]
-    })
-    .compileComponents();
+      declarations: [MetaDirectiveComponent],
+    }).compileComponents();
 
-    fixture = TestBed.createComponent(NgMetaDirectiveComponent);
+    fixture = TestBed.createComponent(MetaDirectiveComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

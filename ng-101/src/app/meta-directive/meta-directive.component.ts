@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-ng-meta-directive',
-  templateUrl: './ng-meta-directive.component.html',
-  styleUrls: ['./ng-meta-directive.component.css']
+  selector: 'app-meta-directive',
+  templateUrl: './meta-directive.component.html',
+  styleUrls: ['./meta-directive.component.css'],
 })
-export class NgMetaDirectiveComponent {
+export class MetaDirectiveComponent {
   collapse = true;
 }

@@ -3,21 +3,21 @@ import { CommonModule } from '@angular/common';
 
 import { SystemTimeService } from '../systemtime.service';
 
-import { NgMetaComponentComponent } from '../ng-meta-component/ng-meta-component.component';
-import { NgMetaModuleComponent } from '../ng-meta-module/ng-meta-module.component';
-import { NgMetaLibraryComponent } from '../ng-meta-library/ng-meta-library.component';
-import { NgMetaDirectiveComponent } from '../ng-meta-directive/ng-meta-directive.component';
+import { MetaComponentComponent } from '../meta-component/meta-component.component';
+import { MetaModuleComponent } from '../meta-module/meta-module.component';
+import { MetaLibraryComponent } from '../meta-library/meta-library.component';
+import { MetaDirectiveComponent } from '../meta-directive/meta-directive.component';
 import { DictionaryComponent } from './dictionary/dictionary.component';
-import { NgMetaProviderComponent } from '../ng-meta-provider/ng-meta-provider.component';
+import { MetaProviderComponent } from '../meta-provider/meta-provider.component';
 import { MetaDataBoundComponent } from '../meta-data-bound/meta-data-bound.component';
 
 @NgModule({
   declarations: [
-    NgMetaComponentComponent,
-    NgMetaModuleComponent,
-    NgMetaLibraryComponent,
-    NgMetaDirectiveComponent,
-    NgMetaProviderComponent,
+    MetaComponentComponent,
+    MetaModuleComponent,
+    MetaLibraryComponent,
+    MetaDirectiveComponent,
+    MetaProviderComponent,
     MetaDataBoundComponent,
     DictionaryComponent,
   ],
