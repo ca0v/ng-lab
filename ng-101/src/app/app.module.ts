@@ -7,10 +7,10 @@ import { DictionaryModule } from './dictionary/dictionary.module';
 
 import { AppComponent } from './app.component';
 import { CollapseDirective } from './collapse.directive';
-import { MetaDataBoundComponent } from './meta-data-bound/meta-data-bound.component';
-import { MetaPipeComponent } from './meta-pipe/meta-pipe.component';
+import { MetaDataBoundComponent } from './dictionary/meta-data-bound/meta-data-bound.component';
+import { MetaPipeComponent } from './dictionary/meta-pipe/meta-pipe.component';
 import { SearchInputFormComponent } from './search-input-form/search-input-form.component';
-import { MetaRouteComponent } from './meta-route/meta-route.component';
+import { MetaRouteComponent } from './dictionary/meta-route/meta-route.component';
 import { RouterModule } from '@angular/router';
 import { DictionaryComponent } from './dictionary/dictionary/dictionary.component';
 
