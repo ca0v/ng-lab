@@ -6,7 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./ng-meta-library.component.css']
 })
 export class NgMetaLibraryComponent {
-
+  collapse = true;
+  
   code = `
   import { Component } from '@angular/core';
   import { BrowserModule } from '@angular/platform-browser'

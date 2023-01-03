@@ -1,6 +1,7 @@
 <h1>{{ title }}</h1>
 <p>This is an example of an application</p>
-<div class="nested">
+<button *ngIf="collapse" (click)="toggleCollapse()">More...</button>
+<div class="nested" *appCollapse="collapse">
   <app-dictionary
     ><p>
       This is an example of a root component with a view hierarchy

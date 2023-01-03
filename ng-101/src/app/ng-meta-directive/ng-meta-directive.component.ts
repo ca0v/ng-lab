@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./ng-meta-directive.component.css']
 })
 export class NgMetaDirectiveComponent {
-
+  collapse = true;
 }

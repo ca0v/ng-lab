@@ -5,14 +5,18 @@
   NgClass, NgStyle, NgModel, NgIf, NgFor, NgSwitch are examples of built-in
   directives
 </p>
-<p>A component is a type of directive</p>
-<p>Attribute directives change the DOM style or behavior</p>
-<p>Structural directives change the DOM layout</p>
-<p>NgClass sets the DOM element class property</p>
-<p>NgStyle sets the DOM element style property</p>
-<p>NgModel defines a binding</p>
 
-<p>
-  You can host a directive using &lt;ng-container&gt;, which will not produce a
-  DOM element
-</p>
+<button *ngIf="collapse" (click)="collapse = !collapse">More...</button>
+<div *ngIf="!collapse">
+  <p>A component is a type of directive</p>
+  <p>Attribute directives change the DOM style or behavior</p>
+  <p>Structural directives change the DOM layout</p>
+  <p>NgClass sets the DOM element class property</p>
+  <p>NgStyle sets the DOM element style property</p>
+  <p>NgModel defines a binding</p>
+
+  <p>
+    You can host a directive using &lt;ng-container&gt;, which will not produce
+    a DOM element
+  </p>
+</div>

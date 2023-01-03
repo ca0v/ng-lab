@@ -2,3 +2,5 @@
 <ng-content></ng-content>
 <p>A provider of dependencies from one part of the system to another</p>
 <p>Used for dependency injection</p>
+<button *ngIf="collapse" (click)="collapse = !collapse">More...</button>
+<div *ngIf="!collapse">coming soon</div>

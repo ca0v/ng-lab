@@ -9,14 +9,17 @@
 
 <p>Every application bootstraps a root module</p>
 <p>The root module imports feature modules</p>
-<p>Modules consolidate components, directives and pipes</p>
-<p>A library is a module</p>
-<p>A library can import components and modules</p>
-<p>
-  imported modules are added to a component as "material" via the
-  <code>import</code> @NgModule metadata property
-</p>
+<button *ngIf="collapse" (click)="collapse = !collapse">More...</button>
+<div *ngIf="!collapse">
+  <p>Modules consolidate components, directives and pipes</p>
+  <p>A library is a module</p>
+  <p>A library can import components and modules</p>
+  <p>
+    imported modules are added to a component as "material" via the
+    <code>import</code> @NgModule metadata property
+  </p>
 
-<p>Modules add services to the application</p>
+  <p>Modules add services to the application</p>
 
-<code innerHTML="{{ code }}"></code>
+  <code innerHTML="{{ code }}"></code>
+</div>
