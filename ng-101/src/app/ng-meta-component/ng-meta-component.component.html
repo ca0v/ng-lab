@@ -1,17 +1,30 @@
 <h2>About Angular Components</h2>
-<p>Use the <code>ng</code> cli to generate a component via <code>ng generate component</code> and then reference the component from another component or module</p>
+<p>
+  Use the <code>ng</code> cli to generate a component via
+  <code>ng generate component</code> and then reference the component from
+  another component or module
+</p>
 
 <h3>Component vs Module</h3>
 <dl>
-    <dt>Component</dt>
-    <dd>
-        A component references 0 or more other components
-    </dd>
-    <dt>Module</dt>
-    <dd>A module bootstraps a component</dd>
+  <dt>Component</dt>
+  <dd>A component references 0 or more other components</dd>
+  <dt>Module</dt>
+  <dd>A module bootstraps a component</dd>
+  <dt>Root Component</dt>
+  <dd>The root component can include additional components</dd>
+  <dt>View</dt>
+  <dd>A view is the combination of a component and a template</dd>
+  <dt>Host View</dt>
+  <dd>The components with it's default template defines the host view</dd>
+  <dt>View Hierarchy</dt>
+  <dd>
+    When a component can contains one or more views, this is called a View
+    Hierarchy
+  </dd>
 </dl>
 
-<h3>Code Sample</h3>
+<h3>Usage Example</h3>
 <pre>
-    {{code}}
+    {{ code }}
 </pre>
