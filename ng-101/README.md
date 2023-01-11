@@ -2,6 +2,8 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.1.
 
+You can see it live [here](https://ca0v.github.io/ng-lab/)
+
 ## Development server
 
 Run `ng serve` for a dev server.
@@ -24,4 +26,5 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 
 ## Dependencies
 
+* [About Angular](https://ca0v.github.io/ng-lab/)
 * [angular-cli-ghpages](https://www.npmjs.com/package/angular-cli-ghpages)
