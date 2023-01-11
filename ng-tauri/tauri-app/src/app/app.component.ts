@@ -45,7 +45,7 @@ export class AppComponent {
 }
 function generateFolders(): Folder[] {
   console.log("generating folders")
-  return ["src", "public", "tauri"].map((f) => ({
+  return ["src", "public", "tauri", "root", "user", "etc"].map((f) => ({
     name: f,
     size: Math.floor(1000 * 1000 * Math.random()),
   }))

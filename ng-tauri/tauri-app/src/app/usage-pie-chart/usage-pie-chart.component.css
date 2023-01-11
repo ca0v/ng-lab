@@ -1,5 +1,4 @@
 svg {
-    max-width: 90vw;
-    height: max(50vh, 10rem);
-    border: 1px solid red;
+  max-width: 90vw;
+  height: max(50vh, 10rem);
 }

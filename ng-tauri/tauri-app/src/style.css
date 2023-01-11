@@ -1,7 +1,9 @@
 @import url("https://cdnjs.cloudflare.com/ajax/libs/picocss/1.5.2/pico.min.css");
 
 :root {
-  ---color-font: #dde;
+  --color-font: #dde;
+  --color-pie-start: rgb(122, 101, 237);
+  --color-pie-end: rgb(31, 138, 113);
 }
 
 body {
@@ -15,11 +17,11 @@ body {
 
 body.dark {
   background-color: black;
-  color: var(---color-font);
+  color: var(--color-font);
 }
 
 body.dark h1, input {
-  color: var(---color-font);
+  color: var(--color-font);
 }
 
 .container {
