@@ -2,7 +2,33 @@
 <ng-content></ng-content>
 <p>A provider of dependencies from one part of the system to another</p>
 <p>Used for dependency injection</p>
-<a href="#" class="outline" role="button" *ngIf="collapse" (click)="collapse = !collapse">More...</a>
+<a
+  href="#"
+  class="outline"
+  role="button"
+  *ngIf="collapse"
+  (click)="collapse = !collapse"
+  >More...</a
+>
 <div *ngIf="!collapse">
   <p>Injector is a sort of factory, creating providers that implement a spec</p>
+  <p>Providers are used to inject dependencies</p>
+  <p>
+    At the bottom of the form you should see a ticking clock, which uses
+    <code>SystemTimeService.getTime()</code>.
+  </p>
+
+  <p>
+    The dictionary.module registers the injectable
+    <code>SystemTimeService</code> this as a provider.
+  </p>
+  <p>
+    The dictionary.component uses/injects this provider via declaring a
+    constructor parameter.
+  </p>
+  <p>
+    By decorating the <code>@Injectable</code> with
+    <code>providedIn: 'root'</code> it becomes globally available, and I could
+    have skipped the registration in the dictionary.module.
+  </p>
 </div>
