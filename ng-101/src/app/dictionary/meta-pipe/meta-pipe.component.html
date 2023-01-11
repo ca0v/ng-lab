@@ -7,5 +7,12 @@
 
 <p>
   See the dictionary component for a decimal pipe example, rounding the system
-  time to seconds.
+  time to seconds. The "|" character is used to pipe the data to the
+  <a href="https://angular.io/api/common/DecimalPipe#digitsinfo">DecimalPipe</a
+  >.
+  <code
+    ><i>{{</i>Total Running Time: runningTime / 1000 | number : "1.0-0"<i
+      >}}</i
+    ></code
+  >
 </p>

@@ -1,4 +1,13 @@
+body {
+  padding: 1rem;
+}
+
+body h2 {
+    margin-bottom: 1rem;
+    border-bottom: 1px solid white;
+}
+
 /* You can add global styles to this file, and also import other style files */
 .nested {
-    padding-left: 1rem;
+  padding-left: 1rem;
 }
