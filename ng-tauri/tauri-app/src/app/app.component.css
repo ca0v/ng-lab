@@ -1,0 +1,25 @@
+* {
+  --border-radius: 4px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(5rem, 1fr));
+}
+
+.flex {
+  display: flex;
+  flex-direction: column;
+}
+
+.panel {
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff44;
+  border-radius: var(--border-radius);
+}
+
+.center {
+    text-align: center;
+    width: 100%;
+}

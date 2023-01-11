@@ -13,10 +13,10 @@ fn discover_folders(name: &str) -> String {
 fn greet(name: &str) -> String {
     /* list all directories in the current directory */
     let paths = fs::read_dir(name);
-    // convert to a string list
-    let paths = paths.unwrap().map(|p| p.unwrap().path().to_str().unwrap().to_string()).collect::<Vec<String>>();
+    // convert to a
     // convert to json
-    let json = serde_json::to_string(&paths).unwrap();
+    let json = paths.unwrap().map(|p| p.unwrap().path().to_str().unwrap().to_string()).collect::<Vec<String>>()
+    .join(",");
     return json;
 }
 
