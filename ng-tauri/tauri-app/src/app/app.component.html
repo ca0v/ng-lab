@@ -2,7 +2,7 @@
   <h1>Tauri Disk Space Analyzer</h1>
   <p>{{ parentDirectory }}</p>
 
-  <div class="row grid" *ngIf="folders">
+  <div class="grid row" *ngIf="folders">
     <div *ngFor="let item of folders">
       <button class="flex" type="button" (click)="drill(item.name)">
         <span class="center">{{ item.name }}</span>
@@ -12,5 +12,8 @@
   </div>
   <div *ngElse>
     <p>No folder content to show</p>
+  </div>
+  <div class="row">
+    <app-usage-pie-chart [folders]="folders"></app-usage-pie-chart>
   </div>
 </div>

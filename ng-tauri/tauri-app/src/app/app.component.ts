@@ -1,14 +1,20 @@
 import { CommonModule } from "@angular/common"
 import { Component } from "@angular/core"
 import { invoke } from "@tauri-apps/api/tauri"
+import { UsagePieChartComponent } from "./usage-pie-chart/usage-pie-chart.component"
 
+export type Folder = {
+  name: string
+  size: number
+}
 @Component({
+  standalone: true,
   selector: "app-root",
   templateUrl: "./app.component.html",
   styleUrls: ["./app.component.css"],
-  standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, UsagePieChartComponent],
 })
+
 export class AppComponent {
   asFileSize(fileSizeInBytes: number) {
     if (fileSizeInBytes < 1024) {
@@ -37,7 +43,7 @@ export class AppComponent {
     })
   }
 }
-function generateFolders() {
+function generateFolders(): Folder[] {
   console.log("generating folders")
   return ["src", "public", "tauri"].map((f) => ({
     name: f,
