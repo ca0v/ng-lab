@@ -45,29 +45,29 @@ export class AppComponent {
     }
   }
 
-  parentDirectory = "/home/ca0v/code/"
+  parentDirectory: string | null = null
+  rootDirectory: string | null = null
 
   folders: Array<Folder> = []
 
   async drill(folder: string) {
-    this.parentDirectory = folder
-    const folders = await this.generateFolders(this.parentDirectory)
-    this.folders = folders
+    this.rootDirectory = folder
+    const folders = await this.generateFolders(this.rootDirectory)
+    this.parentDirectory = folders.parent_folder
+    this.folders = folders.folders
   }
 
   async generateFolders(folder: string) {
-    folder = folder || "./"
     // calls rust function
     let data = await invoke<Explorer>("explore_folder", { folder })
     if (typeof data === "string") {
       console.log("converting string to object")
       data = JSON.parse(data)
     }
-    console.log({ data })
-    return data.folders
+    return data
   }
 
   async ngOnInit() {
-    this.folders = await this.generateFolders(this.parentDirectory)
+    this.drill(this.rootDirectory || "/home/ca0v")
   }
 }

@@ -1,8 +1,11 @@
 <div class="container">
   <h1>Tauri Disk Space Analyzer</h1>
-  <p>{{ parentDirectory }}</p>
+  <p>{{ rootDirectory }}</p>
 
   <div class="grid row" *ngIf="folders">
+    <button *ngIf="parentDirectory" (click)="drill(parentDirectory)">
+      {{ parentDirectory }}
+    </button>
     <div *ngFor="let item of folders">
       <button class="flex" type="button" (click)="drill(item.name)">
         <span class="center">{{ removePathPrefix(item.name) }}</span>
