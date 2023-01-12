@@ -3,6 +3,12 @@ import { Component, Input } from "@angular/core"
 import type { Folder } from "../app.component"
 import * as d3 from "d3"
 
+function removePathPrefix(qualifiedPath: string) {
+  const i = qualifiedPath.lastIndexOf("/")
+  if (i === -1) return qualifiedPath
+  return qualifiedPath.substring(i + 1) || qualifiedPath
+}
+
 @Component({
   standalone: true,
   selector: "app-usage-pie-chart",
@@ -78,7 +84,7 @@ export class UsagePieChartComponent {
       .attr("alignment-baseline", "middle")
       .attr("x", (d) => d3.pointRadial((d.startAngle + d.endAngle) / 2, WIDTH / 4)[0])
       .attr("y", (d) => d3.pointRadial((d.startAngle + d.endAngle) / 2, WIDTH / 4)[1])
-      .text((d) => d.data.name)
+      .text((d) => removePathPrefix(d.data.name))
       .attr("font-size", d => `${(d.endAngle - d.startAngle) * 1.5}em`)
       .attr("fill", getCssVariable("color-font"))
 

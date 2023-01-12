@@ -1,17 +1,22 @@
+use serde::Serialize;
+
 use std::fs;
 
 // create a structure to hold the file name and size
+#[derive(Serialize)]
 pub struct File {
     pub name: String,
     pub size: u64,
 }
 
 // create a structure to hold the folder name and size
+#[derive(Serialize)]
 pub struct Folder {
     pub name: String,
     pub size: u64,
 }
 
+#[derive(Serialize)]
 pub struct Explorer {
     pub parent_folder: String,
     pub files: Vec<File>,

@@ -1,13 +1,24 @@
 import { CommonModule } from "@angular/common"
 import { Component } from "@angular/core"
 import { invoke } from "@tauri-apps/api/tauri"
-import { greatest } from "d3"
 import { UsagePieChartComponent } from "./usage-pie-chart/usage-pie-chart.component"
+
+type Explorer = {
+  parent_folder: string
+  files: Array<File>
+  folders: Array<Folder>
+}
+
+type File = {
+  name: string
+  size: number
+}
 
 export type Folder = {
   name: string
   size: number
 }
+
 @Component({
   standalone: true,
   selector: "app-root",
@@ -16,6 +27,12 @@ export type Folder = {
   imports: [CommonModule, UsagePieChartComponent],
 })
 export class AppComponent {
+  removePathPrefix(qualifiedPath: string) {
+    const i = qualifiedPath.lastIndexOf("/")
+    if (i === -1) return qualifiedPath
+    return qualifiedPath.substring(i + 1) || qualifiedPath
+  }
+
   asFileSize(fileSizeInBytes: number) {
     if (fileSizeInBytes < 1024) {
       return `${fileSizeInBytes} B`
@@ -28,7 +45,7 @@ export class AppComponent {
     }
   }
 
-  parentDirectory = "/home/ca0v/"
+  parentDirectory = "/home/ca0v/code/"
 
   folders: Array<Folder> = []
 
@@ -41,11 +58,13 @@ export class AppComponent {
   async generateFolders(folder: string) {
     folder = folder || "./"
     // calls rust function
-    const text = await invoke<string>("explore_folder", { folder })
-    return text
-      .split(",")
-      .map((v) => v.substring(folder.length))
-      .map((v) => ({ name: v, size: Math.floor(1000 * 1000 * Math.random()) }))
+    let data = await invoke<Explorer>("explore_folder", { folder })
+    if (typeof data === "string") {
+      console.log("converting string to object")
+      data = JSON.parse(data)
+    }
+    console.log({ data })
+    return data.folders
   }
 
   async ngOnInit() {

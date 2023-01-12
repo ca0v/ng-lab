@@ -5,7 +5,7 @@
   <div class="grid row" *ngIf="folders">
     <div *ngFor="let item of folders">
       <button class="flex" type="button" (click)="drill(item.name)">
-        <span class="center">{{ item.name }}</span>
+        <span class="center">{{ removePathPrefix(item.name) }}</span>
         <span class="center">{{ asFileSize(item.size) }}</span>
       </button>
     </div>
