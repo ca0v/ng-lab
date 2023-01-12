@@ -137,16 +137,16 @@ fn list_all_folders_in_folder(folder: &str) -> Vec<String> {
                                     result.push(path.path().to_str().unwrap().to_string());
                                 }
                             }
-                            Err(e) => println!("{} {:?}", folder, e),
+                            Err(e) => eprintln!("{} {:?}", folder, e),
                         }
                     }
-                    Err(e) => println!("{} {:?}", folder, e),
+                    Err(e) => eprintln!("{} {:?}", folder, e),
                 }
             }
             return result;
         }
         Err(e) => {
-            println!("{} {:?}", folder, e);
+            eprintln!("{} {:?}", folder, e);
             return result;
         }
     }
@@ -169,16 +169,16 @@ fn list_all_files_in_folder(folder: &str) -> Vec<String> {
                                     result.push(path.path().to_str().unwrap().to_string());
                                 }
                             }
-                            Err(e) => println!("{:?}", e),
+                            Err(e) => eprintln!("{:?}", e),
                         }
                     }
-                    Err(e) => println!("{:?}", e),
+                    Err(e) => eprintln!("{:?}", e),
                 }
             }
             return result;
         }
         Err(e) => {
-            println!("{:?}", e);
+            eprintln!("{:?}", e);
             return result;
         }
     }

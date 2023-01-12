@@ -1,0 +1,28 @@
+>cargo run /home/ca0v/code/ca0v/ng-lab/ng-tauri/tauri-app 2>/dev/null > out.txt
+
+********************************************************************************
+******************************** PARENT FOLDER *********************************
+********************************************************************************
+/home/ca0v/code/ca0v/ng-lab/ng-tauri
+
+********************************************************************************
+******************************** CHILD FOLDERS *********************************
+********************************************************************************
+345 MB /home/ca0v/code/ca0v/ng-lab/ng-tauri/tauri-app/.angular        1664 files
+ 119 B /home/ca0v/code/ca0v/ng-lab/ng-tauri/tauri-app/.vscode            1 files
+  1 GB /home/ca0v/code/ca0v/ng-lab/ng-tauri/tauri-app/node_modules  149685 files
+ 13 MB /home/ca0v/code/ca0v/ng-lab/ng-tauri/tauri-app/rust-lab         105 files
+ 13 KB /home/ca0v/code/ca0v/ng-lab/ng-tauri/tauri-app/src               14 files
+  5 GB /home/ca0v/code/ca0v/ng-lab/ng-tauri/tauri-app/src-tauri       5581 files
+
+********************************************************************************
+************************************ FILES *************************************
+********************************************************************************
+ 600 B /home/ca0v/code/ca0v/ng-lab/ng-tauri/tauri-app/.browserslistrc
+ 299 B /home/ca0v/code/ca0v/ng-lab/ng-tauri/tauri-app/.gitignore
+ 451 B /home/ca0v/code/ca0v/ng-lab/ng-tauri/tauri-app/README.md
+  2 KB /home/ca0v/code/ca0v/ng-lab/ng-tauri/tauri-app/angular.json
+ 976 B /home/ca0v/code/ca0v/ng-lab/ng-tauri/tauri-app/package.json
+235 KB /home/ca0v/code/ca0v/ng-lab/ng-tauri/tauri-app/pnpm-lock.yaml
+ 267 B /home/ca0v/code/ca0v/ng-lab/ng-tauri/tauri-app/tsconfig.app.json
+ 845 B /home/ca0v/code/ca0v/ng-lab/ng-tauri/tauri-app/tsconfig.json
