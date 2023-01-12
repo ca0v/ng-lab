@@ -54,7 +54,7 @@ pub fn discover(folder: &str) {
     }
 }
 
-fn banner(title: &str) {
+pub fn banner(title: &str) {
     let banner_size = 60;
     let total_padding = banner_size - title.len() - 2;
     let left_padding = total_padding / 2;

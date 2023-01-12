@@ -1,7 +1,5 @@
 mod explorer;
 
-use explorer::discover;
-
 /**
  * It is difficult to develop rust code in the tauri environment.
  * I created this rust-lab project to develop rust code.
@@ -23,5 +21,31 @@ fn main() {
     }
 
     let folder = &args[1];
-    discover(folder);
+    explorer::banner(folder);
+
+    let data = explorer::list_all(folder);
+
+    // print the data
+    explorer::banner("FOLDER DATA");
+
+    // print the data.folders
+    for folder in data.folders {
+        println!(
+            "{:>6} {:60}",
+            explorer::file_size_in_human_readable_format(folder.size),
+            folder.name,
+        );
+    }
+
+    explorer::banner("FILE DATA");
+
+    // print the data.files
+    for file in data.files {
+        println!(
+            "{:>6} {:60}",
+            explorer::file_size_in_human_readable_format(file.size),
+            file.name,
+        );
+    }
+    
 }
