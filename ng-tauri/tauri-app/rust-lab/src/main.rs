@@ -78,7 +78,12 @@ fn banner(title: &str) {
 
     println!(
         "\n{:*<width$}\n{} {} {}\n{:*<width$}",
-        "", left_pad, title, right_pad, "", width=banner_size
+        "",
+        left_pad,
+        title,
+        right_pad,
+        "",
+        width = banner_size
     );
 }
 
@@ -197,10 +202,10 @@ fn get_folder_size(folder: &str) -> u64 {
     return result;
 }
 
-fn get_file_count(folder: &str) -> u16 {
-    let mut result: u16 = 0;
+fn get_file_count(folder: &str) -> usize {
+    let mut result: usize = 0;
     let files = list_all_files_in_folder(folder);
-    result += files.len() as u16;
+    result += files.len();
 
     let folders = list_all_folders_in_folder(folder);
     for folder in folders {
