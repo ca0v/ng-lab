@@ -1,51 +1,41 @@
-#![cfg_attr(all(not(debug_assertions), target_os = "windows"), windows_subsystem = "windows")]
+#![cfg_attr(
+    all(not(debug_assertions), target_os = "windows"),
+    windows_subsystem = "windows"
+)]
 
 // import fs
 use std::{fs, path::Path};
 
+// import discovery module
+mod explorer;
+
 // Learn more about Tauri commands at https://tauri.app/v1/guides/features/command
 #[tauri::command]
 fn explore_folder(folder: &str) -> String {
+    // discover the folder
+    let mut folders = explorer::list_all_folders_in_folder(folder);
+    folders.sort();
 
-    // check if folder exists
-    if !Path::new(folder).exists() {
-        return "<folder does not exist>".to_string();
-    }
+    let mut files = explorer::list_all_files_in_folder(folder);
+    files.sort();
 
-    // set the current directory to the name directory
-    std::env::set_current_dir(folder).unwrap();
+    // get the parent folder
+    let parent_folder = explorer::get_parent_folder(folder);
 
-    // get the parent folder of the current directory
-    let parent_folder = std::env::current_dir().unwrap().parent().unwrap().to_str().unwrap().to_string();
-
-    /* list all directories in the current directory */
-    let paths = fs::read_dir(".");
-
-    // combine the result with the current directory
-    let current_dir = std::env::current_dir().unwrap().to_str().unwrap().to_string();
-
-    // convert to string[]
-    let result = paths.unwrap()
-    .map(|p| p.unwrap().path().to_str().unwrap().to_string())
-    // combine current_dir with path    
-    .map(|p| Path::new(&current_dir).join(&p));
-
-   // convert result to an array of strings
-    let mut result = result.map(|p| p.to_str().unwrap().to_string()).collect::<Vec<String>>();
-
-    // append parentFolder to the end of the result array
-    // create a vector containing parentFolder
+    // combine the results
+    let mut result: Vec<String> = Vec::new();
     result.push(parent_folder);
-        
-    // convert to comma separated string
+    result.append(&mut folders);
+    result.append(&mut files);
+
+    // convert the result to a string
     let result = result.join(",");
-    
+    // return the result
     return result;
 }
 
 fn main() {
-    tauri::Builder
-        ::default()
+    tauri::Builder::default()
         .invoke_handler(tauri::generate_handler![explore_folder])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
