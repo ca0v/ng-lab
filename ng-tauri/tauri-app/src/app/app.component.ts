@@ -1,6 +1,7 @@
 import { CommonModule } from "@angular/common"
 import { Component } from "@angular/core"
 import { invoke } from "@tauri-apps/api/tauri"
+import { greatest } from "d3"
 import { UsagePieChartComponent } from "./usage-pie-chart/usage-pie-chart.component"
 
 export type Folder = {
@@ -14,7 +15,6 @@ export type Folder = {
   styleUrls: ["./app.component.css"],
   imports: [CommonModule, UsagePieChartComponent],
 })
-
 export class AppComponent {
   asFileSize(fileSizeInBytes: number) {
     if (fileSizeInBytes < 1024) {
@@ -28,25 +28,27 @@ export class AppComponent {
     }
   }
 
-  parentDirectory = "/home/username/"
+  parentDirectory = "/home/ca0v/"
 
-  folders = generateFolders()
+  folders: Array<Folder> = []
 
-  drill(folder: string) {
-    this.folders = generateFolders()
+  async drill(folder: string) {
+    this.parentDirectory = folder
+    const folders = await this.generateFolders(this.parentDirectory)
+    this.folders = folders
   }
 
-  greet(name: string): void {
-    // calls rust function greet
-    invoke<string>("greet", { name }).then((text) => {
-      this.parentDirectory = text
-    })
+  async generateFolders(folder: string) {
+    folder = folder || "./"
+    // calls rust function
+    const text = await invoke<string>("explore_folder", { folder })
+    return text
+      .split(",")
+      .map((v) => v.substring(folder.length))
+      .map((v) => ({ name: v, size: Math.floor(1000 * 1000 * Math.random()) }))
   }
-}
-function generateFolders(): Folder[] {
-  console.log("generating folders")
-  return ["src", "public", "tauri", "root", "user", "etc"].map((f) => ({
-    name: f,
-    size: Math.floor(1000 * 1000 * Math.random()),
-  }))
+
+  async ngOnInit() {
+    this.folders = await this.generateFolders(this.parentDirectory)
+  }
 }

@@ -31,6 +31,10 @@ export class UsagePieChartComponent {
     const svg = d3.select("svg")
     if (!svg) throw "svg tag required"
 
+    // clear the svg
+    svg.select("g").remove()
+
+
     // get the svg viewBox
     const WIDTH = 1000
 
