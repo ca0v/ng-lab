@@ -1,5 +1,5 @@
-rust-lab/target
-rust-lab/Cargo.lock
+**/rust_lab/target
+**/rust_lab/Cargo.lock
 
 # Logs
 logs
